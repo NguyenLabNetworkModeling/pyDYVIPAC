@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by libAntimony version v2.6.0 on 2015-06-03 16:14 with libSBML version 5.11.0. -->
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" level="3" version="1">
+  <model id="Rac1" name="Rac1">
+    <listOfCompartments>
+      <compartment sboTerm="SBO:0000410" id="default_compartment" spatialDimensions="3" size="1" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="Rac1GDP" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Rac1GTP" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="RhoAGTP" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="iPAK" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Rac1GTPiPAK" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Rac1GTPpPAK" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="pPAK" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="GEFH1" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="pGEFH1" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="protein1433" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="protein1433pGEFH1" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="RhoAGDP" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="IPA3" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="IPA3iPAK" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="k1" value="0.06" constant="true"/>
+      <parameter id="Rac1GEF" value="8.5" constant="true"/>
+      <parameter id="Km1" value="130" constant="true"/>
+      <parameter id="k2" value="0.505" constant="true"/>
+      <parameter id="Rac1GAP" value="15" constant="true"/>
+      <parameter id="beta32" value="130" constant="true"/>
+      <parameter id="K32" value="1650" constant="true"/>
+      <parameter id="Km2" value="200" constant="true"/>
+      <parameter id="k3" value="0.0001" constant="true"/>
+      <parameter id="k4" value="0.0002" constant="true"/>
+      <parameter id="k5" value="0.0009" constant="true"/>
+      <parameter id="k6" value="0.00035" constant="true"/>
+      <parameter id="k7" value="0.0004" constant="true"/>
+      <parameter id="k8" value="0.505" constant="true"/>
+      <parameter id="Km8" value="30" constant="true"/>
+      <parameter id="Vmax9" value="5.05" constant="true"/>
+      <parameter id="Km9" value="20" constant="true"/>
+      <parameter id="k10" value="0.0001" constant="true"/>
+      <parameter id="k11" value="0.001" constant="true"/>
+      <parameter id="k12" value="0.9" constant="true"/>
+      <parameter id="Km12" value="170" constant="true"/>
+      <parameter id="k13" value="0.06" constant="true"/>
+      <parameter id="RhoAGAP" value="10" constant="true"/>
+      <parameter id="Km13" value="10" constant="true"/>
+      <parameter id="k14" value="0.001" constant="true"/>
+      <parameter id="k15" value="0.01" constant="true"/>
+      <parameter id="k16" value="0.0005" constant="true"/>
+      <parameter id="Rac1GDPtot" value="160" constant="true"/>
+      <parameter id="RhoAGDPtot" value="161" constant="true"/>
+      <parameter id="iPAKtot" value="27" constant="true"/>
+      <parameter id="GEFH1tot" value="4" constant="true"/>
+      <parameter id="protein1433tot" value="1200" constant="true"/>
+      <parameter id="IPA3tot" value="270" constant="true"/>
+    </listOfParameters>
+    <listOfReactions>
+      <reaction id="React1" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="Rac1GDP" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Rac1GTP" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> k1 </ci>
+                <ci> Rac1GDP </ci>
+                <ci> Rac1GEF </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> Km1 </ci>
+                <ci> Rac1GDP </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React2" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="Rac1GTP" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Rac1GDP" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="RhoAGTP"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> k2 </ci>
+                <ci> Rac1GAP </ci>
+                <ci> Rac1GTP </ci>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <ci> beta32 </ci>
+                      <ci> RhoAGTP </ci>
+                    </apply>
+                    <ci> K32 </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <apply>
+                  <plus/>
+                  <ci> Km2 </ci>
+                  <ci> Rac1GTP </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> RhoAGTP </ci>
+                    <ci> K32 </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React3" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="iPAK" stoichiometry="1" constant="true"/>
+          <speciesReference species="Rac1GTP" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Rac1GTPiPAK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> iPAK </ci>
+              <ci> k3 </ci>
+              <ci> Rac1GTP </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React4" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="Rac1GTPiPAK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="iPAK" stoichiometry="1" constant="true"/>
+          <speciesReference species="Rac1GTP" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k4 </ci>
+              <ci> Rac1GTPiPAK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React5" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="Rac1GTPiPAK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Rac1GTPpPAK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k5 </ci>
+              <ci> Rac1GTPiPAK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React6" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="Rac1GTPpPAK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Rac1GTPiPAK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k6 </ci>
+              <ci> Rac1GTPpPAK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React7" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="Rac1GTPpPAK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Rac1GTP" stoichiometry="1" constant="true"/>
+          <speciesReference species="pPAK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k7 </ci>
+              <ci> Rac1GTPpPAK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React8" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="GEFH1" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="pGEFH1" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="pPAK"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> GEFH1 </ci>
+                <ci> k8 </ci>
+                <ci> pPAK </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> GEFH1 </ci>
+                <ci> Km8 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React9" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="pGEFH1" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="GEFH1" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> pGEFH1 </ci>
+                <ci> Vmax9 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> Km9 </ci>
+                <ci> pGEFH1 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React10" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="pGEFH1" stoichiometry="1" constant="true"/>
+          <speciesReference species="protein1433" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="protein1433pGEFH1" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k10 </ci>
+              <ci> pGEFH1 </ci>
+              <ci> protein1433 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React11" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="protein1433pGEFH1" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="pGEFH1" stoichiometry="1" constant="true"/>
+          <speciesReference species="protein1433" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k11 </ci>
+              <ci> protein1433pGEFH1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React12" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="RhoAGDP" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RhoAGTP" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="GEFH1"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> GEFH1 </ci>
+                <ci> k12 </ci>
+                <ci> RhoAGDP </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> Km12 </ci>
+                <ci> RhoAGDP </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React13" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="RhoAGTP" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RhoAGDP" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> k13 </ci>
+                <ci> RhoAGAP </ci>
+                <ci> RhoAGTP </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> Km13 </ci>
+                <ci> RhoAGTP </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React14" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="IPA3" stoichiometry="1" constant="true"/>
+          <speciesReference species="iPAK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="IPA3iPAK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> IPA3 </ci>
+              <ci> iPAK </ci>
+              <ci> k14 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React15" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="IPA3iPAK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="IPA3" stoichiometry="1" constant="true"/>
+          <speciesReference species="iPAK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> IPA3iPAK </ci>
+              <ci> k15 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React16" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="pPAK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="iPAK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k16 </ci>
+              <ci> pPAK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

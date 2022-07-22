@@ -1,0 +1,21 @@
+model SimpleExample01
+
+React1: A + M -> MA; k1*A*M;
+React2: MA  -> A + M ; k2*MA;
+React3: B + M -> MB; k3*B*M;
+React4: MB  -> B + M; k4*MB;
+
+k1 = 1
+k2 = 1
+k3 = 1
+k4 = 1
+A = 0
+B = 0
+M = 0
+MA = 0
+MB = 0
+Mtot = 100
+Btot = 50
+Atot = 10
+
+End

@@ -1,0 +1,3 @@
+S + SA + SK = Stot
+A + SA + pA + KA = Atot
+K + KA + SK = Ktot

@@ -1,0 +1,70 @@
+model Rac1
+
+React1: Rac1GDP -> Rac1GTP; (k1*Rac1GDP*Rac1GEF)/(Km1 + Rac1GDP); 
+React2: Rac1GTP -> Rac1GDP; (k2*Rac1GAP*Rac1GTP*(1+(beta32*RhoAGTP)/K32))/((Km2+Rac1GTP)*(1+RhoAGTP/K32));
+React3: iPAK + Rac1GTP -> Rac1GTPiPAK; iPAK*k3*Rac1GTP; 
+React4: Rac1GTPiPAK -> iPAK + Rac1GTP; k4*Rac1GTPiPAK;
+React5: Rac1GTPiPAK -> Rac1GTPpPAK; k5*Rac1GTPiPAK; 
+React6: Rac1GTPpPAK -> Rac1GTPiPAK; k6*Rac1GTPpPAK; 
+React7: Rac1GTPpPAK -> Rac1GTP + pPAK; k7*Rac1GTPpPAK; 
+React8: GEFH1 -> pGEFH1; (GEFH1*k8*pPAK)/(GEFH1 + Km8); 
+React9: pGEFH1 -> GEFH1; (pGEFH1*Vmax9)/(Km9 + pGEFH1); 
+React10: pGEFH1 + protein1433 -> protein1433pGEFH1; k10*pGEFH1*protein1433; 
+React11: protein1433pGEFH1 -> pGEFH1 + protein1433; k11*protein1433pGEFH1; 
+React12: RhoAGDP -> RhoAGTP; (GEFH1*k12*RhoAGDP)/(Km12+RhoAGDP); 
+React13: RhoAGTP -> RhoAGDP; (k13*RhoAGAP*RhoAGTP)/(Km13+RhoAGTP);
+React14: IPA3 + iPAK -> IPA3iPAK; IPA3*iPAK*k14; 
+React15: IPA3iPAK -> IPA3 + iPAK; IPA3iPAK*k15; 
+React16: pPAK -> iPAK; k16*pPAK;
+
+k1 = 0.06;
+Rac1GEF = 8.5;
+Km1 = 130;
+k2 = 0.505;
+Rac1GAP = 15;
+Km2 = 200;
+beta32 = 130;
+K32 = 1650;
+k3 = 0.0001;
+k4 = 0.0002;
+k5 = 0.0009;
+k6 = 0.00035;
+k7 = 0.0004;
+k8 = 0.505;
+Km8 = 30;
+Vmax9 = 5.05;
+Km9 = 20;
+k10 = 0.0001;
+k11 = 0.001;
+k12 = 0.9;
+Km12 = 170;
+k13 = 0.06;
+Km13 = 10;
+RhoAGAP = 10;
+k14 = 0.001;
+k15 = 0.01;
+k16 = 0.0005;
+
+IPA3iPAK = 0
+pGEFH1 = 0
+pPAK = 0
+protein1433pGEFH1 = 0
+Rac1GTP = 0
+Rac1GTPiPAK = 0
+Rac1GTPpPAK = 0
+RhoAGTP = 0
+Rac1GDP = 0
+RhoAGDP = 0
+iPAK = 0
+IPA3 = 0
+GEFH1 = 0
+protein1433 = 0
+
+Rac1GDPtot = 160
+RhoAGDPtot = 161
+iPAKtot = 27
+GEFH1tot = 4
+protein1433tot = 1200
+IPA3tot = 270
+
+End

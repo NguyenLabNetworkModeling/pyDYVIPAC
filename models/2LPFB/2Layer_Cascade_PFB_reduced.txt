@@ -1,0 +1,21 @@
+model TwoLayerCascadePFB
+
+React1:  -> pS1; k1*(S1t-pS1)*(1 + (a*pS2^n1)/(K1^n1 + pS2^n1));
+React2: pS1  -> ; k2*pS1;
+React3:  -> pS2; k3*(S2t-pS2)*pS1;
+React4: pS2  -> ; k4*pS2;
+
+
+pS1=0
+pS2=0
+
+S1t=50
+S2t=50
+k1=0.001
+k2=0.01
+k3=0.001
+k4=0.1
+n1=10
+K1=10
+a=10
+End

@@ -1,0 +1,6 @@
+IPA3iPAK + IPA3 = IPA3tot
+RhoAGTP + RhoAGDP = RhoAGDPtot
+Rac1GDP + Rac1GTP + Rac1GTPiPAK + Rac1GTPpPAK = Rac1GDPtot
+iPAK + IPA3iPAK + Rac1GTPpPAK + pPAK + Rac1GTPiPAK = iPAKtot
+pGEFH1 + protein1433pGEFH1 + GEFH1 = GEFH1tot
+protein1433 + protein1433pGEFH1 = protein1433tot

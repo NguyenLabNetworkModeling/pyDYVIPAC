@@ -1,0 +1,3 @@
+S1 + pS1 = S1t 
+S2 + pS2 = S2t 
+S3 + pS3 = S3t

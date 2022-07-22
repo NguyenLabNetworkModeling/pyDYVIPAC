@@ -1,0 +1,29 @@
+model SimpleExample03
+React1: S+ K -> SK; k1*S*K;
+React2: SK -> S+ K; k2*SK;
+React3: S+ A -> SA; A*k3*S;
+React4: SA -> S+ A; k4*SA;
+React5: K+ A -> KA; A*ka*K;
+React6: KA -> K+ A; kd*KA;
+React7: KA -> K+ pA; kc*KA;
+React8: pA -> A; Vmax*pA/(Km + pA);
+A=0
+S=0
+SA=0
+SK=0
+pA=0
+K=0
+KA=0
+k1=0.001
+k2=0.01
+k3=0.001
+k4=0.01
+ka=0.001
+kd=0.01
+kc=0.01
+Vmax=1
+Km=10
+Atot = 100
+Stot = 100
+Ktot = 100
+End

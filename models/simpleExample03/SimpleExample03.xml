@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by libAntimony version v2.6.0 on 2015-05-08 12:35 with libSBML version 5.11.0. -->
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" level="3" version="1">
+  <model id="SimpleExample03" name="SimpleExample03">
+    <listOfCompartments>
+      <compartment sboTerm="SBO:0000410" id="default_compartment" spatialDimensions="3" size="1" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="S" compartment="default_compartment" initialConcentration="50" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="K" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="SK" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="A" compartment="default_compartment" initialConcentration="50" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="SA" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="KA" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="pA" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="k1" value="0.001" constant="true"/>
+      <parameter id="k2" value="0.01" constant="true"/>
+      <parameter id="k3" value="0.001" constant="true"/>
+      <parameter id="k4" value="0.01" constant="true"/>
+      <parameter id="ka" value="0.001" constant="true"/>
+      <parameter id="kd" value="0.01" constant="true"/>
+      <parameter id="kc" value="0.01" constant="true"/>
+      <parameter id="Vmax" value="1" constant="true"/>
+      <parameter id="Km" value="10" constant="true"/>
+      <parameter id="Atot" value="100" constant="true"/>
+      <parameter id="Stot" value="100" constant="true"/>
+      <parameter id="Ktot" value="100" constant="true"/>
+    </listOfParameters>
+    <listOfReactions>
+      <reaction id="React1" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="S" stoichiometry="1" constant="true"/>
+          <speciesReference species="K" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="SK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k1 </ci>
+              <ci> S </ci>
+              <ci> K </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React2" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="SK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="S" stoichiometry="1" constant="true"/>
+          <speciesReference species="K" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k2 </ci>
+              <ci> SK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React3" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="S" stoichiometry="1" constant="true"/>
+          <speciesReference species="A" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="SA" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> A </ci>
+              <ci> k3 </ci>
+              <ci> S </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React4" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="SA" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="S" stoichiometry="1" constant="true"/>
+          <speciesReference species="A" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k4 </ci>
+              <ci> SA </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React5" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="K" stoichiometry="1" constant="true"/>
+          <speciesReference species="A" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="KA" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> A </ci>
+              <ci> ka </ci>
+              <ci> K </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React6" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="KA" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="K" stoichiometry="1" constant="true"/>
+          <speciesReference species="A" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kd </ci>
+              <ci> KA </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React7" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="KA" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="K" stoichiometry="1" constant="true"/>
+          <speciesReference species="pA" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kc </ci>
+              <ci> KA </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React8" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="pA" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="A" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> Vmax </ci>
+                <ci> pA </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> Km </ci>
+                <ci> pA </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

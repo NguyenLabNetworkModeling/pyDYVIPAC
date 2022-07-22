@@ -1,0 +1,3 @@
+A + MA = Atot
+B +  MB = Btot
+M + MA + MB = Mtot

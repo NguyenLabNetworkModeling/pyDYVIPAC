@@ -1,0 +1,24 @@
+model SimpleExample02
+
+React1: M + M -> MM; k1*M*M;
+React2: MM  -> M + M ; k2*MM;
+React3: S + M -> SM; k3*S*M;
+React4: SM  -> S + M; k4*SM;
+React5: S + MM -> SMM; k3*S*MM;
+React6: SMM -> S + MM; k4*SMM;
+React7: SM + M -> SMM; k1*SM*M;
+React8: SMM -> SM + M; k2*SMM;
+
+k1 = 1
+k2 = 1
+k3 = 1
+k4 = 1
+M = 0
+S = 0
+MM = 0
+SM = 0
+SMM = 0
+Mtot = 100
+Stot = 50
+
+End

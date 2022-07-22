@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by libAntimony version v2.6.0 on 2015-05-01 11:16 with libSBML version 5.11.0. -->
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
+  <model id="SimpleExample01" name="SimpleExample01">
+    <listOfCompartments>
+      <compartment sboTerm="SBO:0000410" id="default_compartment" size="1"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="A" compartment="default_compartment" initialConcentration="0"/>
+      <species id="M" compartment="default_compartment" initialConcentration="0"/>
+      <species id="MA" compartment="default_compartment" initialConcentration="0"/>
+      <species id="B" compartment="default_compartment" initialConcentration="0"/>
+      <species id="MB" compartment="default_compartment" initialConcentration="0"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="k1" value="1"/>
+      <parameter id="k2" value="1"/>
+      <parameter id="k3" value="1"/>
+      <parameter id="k4" value="1"/>
+      <parameter id="Mtot" value="100"/>
+      <parameter id="Btot" value="50"/>
+      <parameter id="Atot" value="10"/>
+    </listOfParameters>
+    <listOfReactions>
+      <reaction id="React1" fast="false">
+        <listOfReactants>
+          <speciesReference species="A"/>
+          <speciesReference species="M"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MA"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k1 </ci>
+              <ci> A </ci>
+              <ci> M </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React2" fast="false">
+        <listOfReactants>
+          <speciesReference species="MA"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="A"/>
+          <speciesReference species="M"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k2 </ci>
+              <ci> MA </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React3" fast="false">
+        <listOfReactants>
+          <speciesReference species="B"/>
+          <speciesReference species="M"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MB"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k3 </ci>
+              <ci> B </ci>
+              <ci> M </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React4" fast="false">
+        <listOfReactants>
+          <speciesReference species="MB"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="B"/>
+          <speciesReference species="M"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k4 </ci>
+              <ci> MB </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

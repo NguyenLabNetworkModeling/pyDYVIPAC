@@ -1,0 +1,2 @@
+S + SM + SMM = Stot
+M + SM + 2*MM + 2*SMM = Mtot

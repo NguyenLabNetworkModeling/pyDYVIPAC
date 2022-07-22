@@ -1,0 +1,25 @@
+model ThreeLayerCascadeNFB
+
+React1:  -> pS1; k1*(S1t-pS1)*((K1^n1)/(K1^n1 + pS3^n1));
+React2: pS1  -> ; k2*pS1;
+React3:  -> pS2; k3*(S2t-pS2)*pS1;
+React4: pS2  -> ; k4*pS2;
+React5: -> pS3; k5*(S3t-pS3)*pS2;
+React6: pS3 -> k6*pS3;
+
+pS1=0
+pS2=0
+pS3=0
+
+S1t=50
+S2t=50
+S3t=50
+k1=0.001
+k2=0.01
+k3=0.001
+k4=0.1
+k5=0.001
+k6=0.1
+n1=3
+K1=10
+End

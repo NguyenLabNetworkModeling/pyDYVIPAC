@@ -1,0 +1,3 @@
+Rac1GDPtot 1 1000
+RhoAGDPtot 1 1000
+iPAKtot 1 1000

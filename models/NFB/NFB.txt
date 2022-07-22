@@ -1,0 +1,23 @@
+model NFB
+
+React1:    -> S1; k1*K1^n1/(K1^n1+S3^n1);
+React2: S1 ->   ; kd1*S1;
+React3:    -> S2; k2*S1;
+React4: S2 ->   ; kd2*S2;
+React5:    -> S3; k3*S2;
+React6: S3 ->   ; kd3*S3;
+
+S1=0
+S2=0
+S3=0
+
+k1=0.1
+k2=0.1
+k3=0.1
+kd1=0.01
+kd2=0.01
+kd3=0.01
+n1=9
+K1=1
+
+End

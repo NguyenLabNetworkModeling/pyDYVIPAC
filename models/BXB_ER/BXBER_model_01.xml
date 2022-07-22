@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by libAntimony version v2.6.0 on 2015-06-19 19:25 with libSBML version 5.11.0. -->
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" level="3" version="1">
+  <model id="BXBER_model_01" name="BXBER_model_01">
+    <listOfCompartments>
+      <compartment sboTerm="SBO:0000410" id="default_compartment" spatialDimensions="3" size="1" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="BXB_ER" compartment="default_compartment" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="MEK" compartment="default_compartment" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="BXB_ER_MEK" compartment="default_compartment" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="pMEK" compartment="default_compartment" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="BXB_ER_pMEK" compartment="default_compartment" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="aMEK" compartment="default_compartment" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="ERK" compartment="default_compartment" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="aMEK_ERK" compartment="default_compartment" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="pERK" compartment="default_compartment" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="aMEK_pERK" compartment="default_compartment" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="aERK" compartment="default_compartment" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="P1" compartment="default_compartment" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="P1_aMEK" compartment="default_compartment" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="P1_pMEK" compartment="default_compartment" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="P2" compartment="default_compartment" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="P2_aERK" compartment="default_compartment" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="P2_pERK" compartment="default_compartment" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="kR1" value="0.0117707685" constant="true"/>
+      <parameter id="kR2" value="0.033" constant="true"/>
+      <parameter id="kR3" value="3.5" constant="true"/>
+      <parameter id="kR4" value="0.0117707685" constant="true"/>
+      <parameter id="kR5" value="0.033" constant="true"/>
+      <parameter id="kR6" value="2.9" constant="true"/>
+      <parameter id="kR7" value="0.0536392922" constant="true"/>
+      <parameter id="kR8" value="0.01833" constant="true"/>
+      <parameter id="kR9" value="16" constant="true"/>
+      <parameter id="kR10" value="0.0536392922" constant="true"/>
+      <parameter id="kR11" value="0.01833" constant="true"/>
+      <parameter id="kR12" value="5.7" constant="true"/>
+      <parameter id="kR13" value="0.0143524333" constant="true"/>
+      <parameter id="kR14" value="0.8" constant="true"/>
+      <parameter id="kR15" value="0.058" constant="true"/>
+      <parameter id="kR16" value="0.00027099" constant="true"/>
+      <parameter id="kR17" value="0.5" constant="true"/>
+      <parameter id="kR18" value="0.058" constant="true"/>
+      <parameter id="kR19" value="0.0141517" constant="true"/>
+      <parameter id="kR20" value="0.6" constant="true"/>
+      <parameter id="kR21" value="0.246" constant="true"/>
+      <parameter id="kR22" value="0.0050183333" constant="true"/>
+      <parameter id="kR23" value="0.5" constant="true"/>
+      <parameter id="kR24" value="0.246" constant="true"/>
+      <parameter id="BXB_ER_0" value="6.6423115244" constant="true"/>
+      <parameter id="MEK_0" value="34872.1355031551" constant="true"/>
+      <parameter id="ERK_0" value="36698.771172368" constant="true"/>
+      <parameter id="P1_0" value="664.2311524411" constant="true"/>
+      <parameter id="P2_0" value="16605.7788110262" constant="true"/>
+    </listOfParameters>
+    <listOfReactions>
+      <reaction id="React1" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="BXB_ER" stoichiometry="1" constant="true"/>
+          <speciesReference species="MEK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="BXB_ER_MEK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kR1 </ci>
+              <ci> BXB_ER </ci>
+              <ci> MEK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React2" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="BXB_ER_MEK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="BXB_ER" stoichiometry="1" constant="true"/>
+          <speciesReference species="MEK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kR2 </ci>
+              <ci> BXB_ER_MEK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React3" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="BXB_ER_MEK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="BXB_ER" stoichiometry="1" constant="true"/>
+          <speciesReference species="pMEK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kR3 </ci>
+              <ci> BXB_ER_MEK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React4" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="BXB_ER" stoichiometry="1" constant="true"/>
+          <speciesReference species="pMEK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="BXB_ER_pMEK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kR4 </ci>
+              <ci> BXB_ER </ci>
+              <ci> pMEK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React5" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="BXB_ER_pMEK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="BXB_ER" stoichiometry="1" constant="true"/>
+          <speciesReference species="pMEK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kR5 </ci>
+              <ci> BXB_ER_pMEK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React6" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="BXB_ER_pMEK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="BXB_ER" stoichiometry="1" constant="true"/>
+          <speciesReference species="aMEK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kR6 </ci>
+              <ci> BXB_ER_pMEK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React7" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="aMEK" stoichiometry="1" constant="true"/>
+          <speciesReference species="ERK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="aMEK_ERK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kR7 </ci>
+              <ci> aMEK </ci>
+              <ci> ERK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React8" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="aMEK_ERK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="aMEK" stoichiometry="1" constant="true"/>
+          <speciesReference species="ERK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kR8 </ci>
+              <ci> aMEK_ERK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React9" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="aMEK_ERK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="aMEK" stoichiometry="1" constant="true"/>
+          <speciesReference species="pERK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kR9 </ci>
+              <ci> aMEK_ERK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React10" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="aMEK" stoichiometry="1" constant="true"/>
+          <speciesReference species="pERK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="aMEK_pERK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kR10 </ci>
+              <ci> aMEK </ci>
+              <ci> pERK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React11" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="aMEK_pERK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="aMEK" stoichiometry="1" constant="true"/>
+          <speciesReference species="pERK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kR11 </ci>
+              <ci> aMEK_pERK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React12" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="aMEK_pERK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="aMEK" stoichiometry="1" constant="true"/>
+          <speciesReference species="aERK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kR12 </ci>
+              <ci> aMEK_pERK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React13" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="P1" stoichiometry="1" constant="true"/>
+          <speciesReference species="aMEK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="P1_aMEK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kR13 </ci>
+              <ci> P1 </ci>
+              <ci> aMEK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React14" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="P1_aMEK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="P1" stoichiometry="1" constant="true"/>
+          <speciesReference species="aMEK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kR14 </ci>
+              <ci> P1_aMEK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React15" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="P1_aMEK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="P1" stoichiometry="1" constant="true"/>
+          <speciesReference species="pMEK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kR15 </ci>
+              <ci> P1_aMEK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React16" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="P1" stoichiometry="1" constant="true"/>
+          <speciesReference species="pMEK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="P1_pMEK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kR16 </ci>
+              <ci> P1 </ci>
+              <ci> pMEK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React17" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="P1_pMEK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="P1" stoichiometry="1" constant="true"/>
+          <speciesReference species="pMEK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kR17 </ci>
+              <ci> P1_pMEK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React18" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="P1_pMEK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="P1" stoichiometry="1" constant="true"/>
+          <speciesReference species="MEK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kR18 </ci>
+              <ci> P1_pMEK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React19" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="P2" stoichiometry="1" constant="true"/>
+          <speciesReference species="aERK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="P2_aERK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kR19 </ci>
+              <ci> P2 </ci>
+              <ci> aERK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React20" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="P2_aERK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="P2" stoichiometry="1" constant="true"/>
+          <speciesReference species="aERK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kR20 </ci>
+              <ci> P2_aERK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React21" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="P2_aERK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="P2" stoichiometry="1" constant="true"/>
+          <speciesReference species="pERK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kR21 </ci>
+              <ci> P2_aERK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React22" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="P2" stoichiometry="1" constant="true"/>
+          <speciesReference species="pERK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="P2_pERK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kR22 </ci>
+              <ci> P2 </ci>
+              <ci> pERK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React23" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="P2_pERK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="P2" stoichiometry="1" constant="true"/>
+          <speciesReference species="pERK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kR23 </ci>
+              <ci> P2_pERK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="React24" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference species="P2_pERK" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="P2" stoichiometry="1" constant="true"/>
+          <speciesReference species="ERK" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kR24 </ci>
+              <ci> P2_pERK </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

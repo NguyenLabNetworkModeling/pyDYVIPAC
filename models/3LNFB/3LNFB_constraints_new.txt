@@ -1,0 +1,3 @@
+pS1 < S1t
+pS2 < S2t
+pS3 < S3t
